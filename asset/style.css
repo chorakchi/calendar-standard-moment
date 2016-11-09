@@ -1,0 +1,24 @@
+body{
+    background: #333;
+    color: #111;
+}
+.mounth{
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid palevioletred;
+    border-radius: 3px;
+}
+.day-of-mounth{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 3px;
+    margin:  1px;
+}
+.sperat-week{
+    width: 100px;
+}
