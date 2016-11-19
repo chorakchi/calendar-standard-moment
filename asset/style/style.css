@@ -1,4 +1,4 @@
-/*@font-face {
+@font-face {
   font-family: 'isw';
   src:url('../fonts/IRANSansWeb.woff');
   font-weight: normal;
@@ -34,45 +34,80 @@
 body{
     background: #333;
     color: #fff;
-    box-sizing: border-box;
 }
 *, *::after, *::before {
-    font-family: 'isw'
+    font-family: 'isw';
   box-sizing: border-box;
+  font-size: 15px;
 }
 .test{
     font-size: 20px;
     color: darksalmon;
 }
-.block-side{
-    display: inline;
-    background: cadetblue;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    margin: 10px;
-
-}
-.mounth{
-    display: inline;
+.datepicker{
     position: absolute;
-    padding: 10px;
-    margin: 10px;
     border: 1px solid palevioletred;
+    background: rgba(255,255,255,0.1);
+}
+.block-side{
+    position: relative;
+    float: left;
+    height: 100%;
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding:10px;
+}
+.block-main{
+    position: relative;
+    display: inline-block;
     background: rgba(255,255,255,0.1)
 }
+.mounth{
+    position: relative;
+    padding: 4%;
+    margin: 10px;
+
+    background: rgba(255,255,255,0.1)
+}
+.name-of-week{
+    width: 13%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: rgba(255,255,255,0.4);
+    overflow:hidden;
+}
 .day-of-mounth{
-    width: 70px;
-    height: 70px;
+    width: 13%;
+    text-align: center;
     position: relative;
     display: inline-block;
     border: 1px solid rgba(255,255,255,0.0);
     border-radius: 2px;
-    padding: 5px;
-    margin:  1px;
+    padding: 3px;
+
     color: palegoldenrod;
     overflow:hidden;
 }
 .sperat-week{
-    width: 100px;
-}*/
+    width: 100%;
+}
+.piker-pickedyear{
+    font-size: 20px;
+}
+.piker-pickedday{
+    font-size: 35px;
+}
+.piker-pickeddate{
+    display: inline-block;
+    font-size: 20px;
+}
+.piker-pickedmonth{
+    display: inline-block;
+    font-size: 20px;
+}
+.picker_nowdate{
+    font-size: 20px;
+    color: antiquewhite;
+    padding: 30px;
+}
