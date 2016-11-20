@@ -8,33 +8,32 @@
 // var sdate = moment().daysInMonth();
 // console.log(picker_startdayofmonth);
 // var picker_startdayofmonth = parseInt (picker_date_temp.date("1").format('d'));
-
-jQuery(document).ready(function () {
-
-var picker_nowdate =  parseInt(moment().date());
-var picker_nowmonth =  parseInt(moment().month());
-var picker_nowyear =  parseInt(moment().year());
-
-var picker_date = moment();
-var picker_pikeddate =  parseInt(picker_date.date());
-var picker_pickedmonth =  parseInt(picker_date.month());
-var picker_pickedyear =  parseInt(picker_date.year());
-var picker_startdayofmonth =  Math.abs(((picker_date.date())%7)-7);
-var picker_dayofmonth = parseInt(picker_date.daysInMonth());
-
-        $(".piker-pickedyear").text(picker_date.format('YYYY'));
-        $(".piker-pickedday").text(picker_date.format('dddd'));
-        $(".piker-pickeddate").text(picker_date.format('D'));
-        $(".piker-pickedmonth").text(picker_date.format('MMMM'));
-        $(".picker_nowdate").text(moment().format('YYYY / M / D'));
-
+function pikertest(testvalue){
+  $(".test" ).text( testvalue );
+}
+function pikersettime(time){
+  var picker_pikeddate =  parseInt(time.date());
+  var picker_pickedmonth =  parseInt(time.month());
+  var picker_pickedyear =  parseInt(time.year());
+  var picker_startdayofmonth =  Math.abs(((time.date())%7)-7);
+  var picker_dayofmonth = parseInt(time.daysInMonth());
+  
+  $(".piker-pickedyear").text(time.format('YYYY'));
+  $(".piker-pickedday").text(time.format('dddd'));
+  $(".piker-pickeddate").text(time.format('D'));
+  $(".piker-pickedmonth").text(time.format('MMMM'));
+  $(".picker_nowdate").text(moment().format('YYYY / M / D'));
+        
   for(j =1 ,  i = picker_startdayofmonth ; i <= picker_dayofmonth+1 ; i++ , j++){
-  $(".day-of-mounth").eq(i).text(j);
-  $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.2)"});
-  if(j ==picker_nowdate && picker_nowmonth == picker_pickedmonth && picker_nowyear== picker_pickedyear){
-    $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,1)"});
+    $(".day-of-mounth").eq(i).text(j);
+    $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.2)"});
+    if(j == parseInt(moment().date()) && parseInt(moment().month()) == picker_pickedmonth && parseInt(moment().year()) == picker_pickedyear){
+      $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,1)"});
+    }
   }
 }
-
-  $(".test" ).text( parseInt(picker_date.Month()) );
+jQuery(document).ready(function () {
+pikertest(parseInt(moment().date()));
+pikersettime(moment());
 });
+
