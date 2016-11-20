@@ -34,9 +34,10 @@
 body{
     background: #333;
     color: #fff;
+    font-family: 'isw';
 }
 *, *::after, *::before {
-    font-family: 'isw';
+    
   box-sizing: border-box;
   font-size: 15px;
 }
@@ -46,15 +47,15 @@ body{
 }
 .datepicker{
     position: absolute;
-    border: 1px solid palevioletred;
-    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(56,68,82,1);
 }
 .block-side{
     position: relative;
     float: left;
     height: 100%;
     display: inline-block;
-    background: rgba(255,255,255,0.1);
+    /*background: rgba(255,255,255,0.1);*/
     padding:10px;
 }
 .block-main{
@@ -62,12 +63,14 @@ body{
     display: inline-block;
     background: rgba(255,255,255,0.1)
 }
+.piker-row{
+    position: relative;
+}
 .mounth{
     position: relative;
     padding: 4%;
     margin: 10px;
-
-    background: rgba(255,255,255,0.1)
+    background: rgba(0,0,0,0.1)
 }
 .name-of-week{
     width: 13%;
@@ -76,18 +79,27 @@ body{
     display: inline-block;
     color: rgba(255,255,255,0.4);
     overflow:hidden;
+    min-width: 40px;
+    font-size: 10px;
 }
 .day-of-mounth{
     width: 13%;
+    min-width: 40px;
     text-align: center;
     position: relative;
     display: inline-block;
     border: 1px solid rgba(255,255,255,0.0);
     border-radius: 2px;
     padding: 3px;
-
-    color: palegoldenrod;
-    overflow:hidden;
+    cursor: pointer;
+    color: rgb(255,255,255);
+    margin-bottom: 4px;
+}
+.day-of-mounth:hover{
+    background: rgba(0,0,0,0.1)
+}
+.day-of-mounth-today{
+    background: rgba(255,255,255,0.1);
 }
 .sperat-week{
     width: 100%;
@@ -96,18 +108,42 @@ body{
     font-size: 20px;
 }
 .piker-pickedday{
-    font-size: 35px;
+    font-size: 30px;
 }
 .piker-pickeddate{
-    display: inline-block;
     font-size: 20px;
 }
 .piker-pickedmonth{
-    display: inline-block;
     font-size: 20px;
 }
 .picker_nowdate{
+    font-size: 18px;
+    color: rgba(255,255,255,0.3);
+    padding: 10px;
+    border-top: 5px solid rgba(255,255,255,0.1);
+
+}
+.picker-header{
+    position: relative;
+    width: 100%;
+}
+.inline-block{
+    display: inline-block;
+}
+.color-gray1{
+    color: rgba(255,255,255,0.7);
+}
+.picker-btnmonth{
+    padding: 0px 13px;
+    cursor: pointer;
+    color: white;
     font-size: 20px;
-    color: antiquewhite;
-    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    float: right;
+}
+.picker-btnmonth::before{
+    font-size: 25px;
+}
+.picker-btnmonth:hover{
+    background: rgba(0,0,0,0.1);
 }

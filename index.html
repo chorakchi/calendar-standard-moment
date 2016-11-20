@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="asset/style/style.css">
+    <link rel="stylesheet" href="asset/style/mfd-font.css">
     <script src="asset/jquery-1.10.2.js"></script>
         <script src="asset/moment.js"></script>
         <script src="asset/moment-jalaali.js"></script>
@@ -11,24 +12,33 @@
 </head>
 <div class="test">a</div>
 <body>
-    
+    <input type="text">
 <div class="datepicker">
     <div class="block-side">
         <div class="piker-pickedyear"></div>
         <div class="piker-pickedday"></div>
-        <div class="piker-pickeddate"></div>
-        <div class="piker-pickedmonth"></div>
+        <div class="piker-pickeddate inline-block"></div>
+        <div class="piker-pickedmonth inline-block"></div>
         <div class="picker_nowdate"></div>
     </div>
     <div class="block-main">
         <div class="mounth">
-            <div class="name-of-week">شنبه</div>
+            <div class="picker-header">
+                <div class="piker-pickedmonth inline-block color-gray1"> </div>
+                <div class="inline-block"> </div>
+                <div class="piker-pickedyear  inline-block color-gray1"></div>
+                <div class="picker-nextmonth picker-btnmonth mfd-down inline-block"><span class=""></span></div>
+                <div class="picker-prevmonth picker-btnmonth mfd-top inline-block"><span class=""></span></div>
+            </div>
+            <piker-row>
+                <div class="name-of-week">شنبه</div>
             <div class="name-of-week">یک شنبه</div>
             <div class="name-of-week"> دو شنبه</div>
             <div class="name-of-week">سه شنبه</div>
             <div class="name-of-week">چهار شنبه</div>
             <div class="name-of-week">پنج شنبه</div>
             <div class="name-of-week">جمعه</div>
+            </piker-row>
             <div class="sperat-week"></div>
             <div class="day-of-mounth"></div>
             <div class="day-of-mounth"></div>
