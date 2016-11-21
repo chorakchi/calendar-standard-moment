@@ -13,18 +13,18 @@ function pikertest(testvalue){
   $(".test" ).text( testvalue );
 }
 function pikersettime(date){
-  var picker_pikeddate =  parseInt(date.format('D'));
-  var picker_pickedmonth =  parseInt(date.format('M'));
-  var picker_pickedyear =  parseInt(date.format('YYYY'));
-  var picker_date_temp = moment(picker_pickedyear+"-"+picker_pickedmonth+"-01");
+  var picker_pikeddate =  parseInt(date.format('jD'));
+  var picker_pickedmonth =  parseInt(date.format('jM'));
+  var picker_pickedyear =  parseInt(date.format('jYYYY'));
+  var picker_date_temp = moment(picker_pickedyear+"-"+picker_pickedmonth+"-01",'jYYY-jM-jD');
   var picker_startdayofmonth =  parseInt (picker_date_temp.format('d'));
   var picker_dayofmonth = parseInt(date.daysInMonth());
   
-  $(".piker-pickedyear").text(date.format('YYYY'));
+  $(".piker-pickedyear").text(date.format('jYYYY'));
   $(".piker-pickedday").text(date.format('dddd'));
-  $(".piker-pickeddate").text(date.format('D'));
-  $(".piker-pickedmonth").text(date.format('MMMM'));
-  $(".picker_nowdate").text(moment().format('YYYY/M/D'+' : امـروز'));
+  $(".piker-pickeddate").text(date.format('jD'));
+  $(".piker-pickedmonth").text(date.format('jMMMM'));
+  $(".picker_nowdate").text(moment().format('jYYYY/jM/jD'+' : امـروز'));
 
   for(  i = 0 ; i <= 41 ; i++ ){
     $(".day-of-mounth").eq(i).text("");
@@ -34,7 +34,7 @@ function pikersettime(date){
   for(j =1 ,  i = picker_startdayofmonth ; i <= picker_dayofmonth+picker_startdayofmonth-1 ; i++ , j++){
     $(".day-of-mounth").eq(i).text(j);
     $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.1)"});
-    if(j == parseInt(moment().format('D')) && parseInt(moment().format('M')) == picker_pickedmonth && parseInt(moment().format('YYYY')) == picker_pickedyear){
+    if(j == parseInt(moment().format('jD')) && parseInt(moment().format('jM')) == picker_pickedmonth && parseInt(moment().format('jYYYY')) == picker_pickedyear){
       $(".day-of-mounth").eq(i).addClass('day-of-mounth-today');
     }
   }
@@ -50,9 +50,9 @@ pikersettime(date.subtract(1, 'months'));
 })
 $('.day-of-mounth').click(function(){
   date.set('date',parseInt($(this).text()));
-  $(".piker-pickeddate").text(date.format('D'));
+  $(".piker-pickeddate").text(date.format('jD'));
   $(".piker-pickedday").text(date.format('dddd'));
-  $('.datepickerinput').val(date.format('YYYY/M/D'));
+  $('.datepickerinput').val(date.format('jYYYY/jM/jD'));
 
 })
 }
