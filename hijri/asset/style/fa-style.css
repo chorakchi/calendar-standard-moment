@@ -1,0 +1,41 @@
+.sidebar-rtl{
+    right: 0;
+}
+.al-main-uncollapsing-rtl{
+    margin-right: 240px;
+    direction: rtl;
+}
+.al-main-uncollapsing-rtl *{
+    direction: ltr;
+}
+.al-main-uncollapsing-rtl *{
+    direction: ltr;
+}
+.al-logo-rtl{
+    float: right;
+}
+.collapse-menu-rtl{
+    float: right;
+}
+.user-profile-rtl{
+    float: left;
+}
+.btn-head-rtl{
+    float: left;
+}
+.icon-align-rtl{
+    float: right;
+}
+.menu-cast-rtl{
+    float: left;
+}
+.title-menu-rtl{
+    direction: rtl;
+    text-align: right;
+}
+.slimscrolldiv-rtl{
+    float: right;
+}
+.title-menu-main2-rtl {
+    padding-right: 40px;
+}
