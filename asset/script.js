@@ -25,19 +25,28 @@ function pikersettime(date){
   $(".piker-pickeddate").text(date.format('D'));
   $(".piker-pickedmonth").text(date.format('MMMM'));
   $(".picker_nowdate").text(moment().format('YYYY/M/D'+' : امـروز'));
+  
+  $('.day-of-mounth').addClass('opacity-none');
 
-  for(  i = 0 ; i <= 41 ; i++ ){
+  setTimeout(function() {
+    for(  i = 0 ; i <= 41 ; i++ ){
     $(".day-of-mounth").eq(i).text("");
     $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.0)"});
     $(".day-of-mounth").eq(i).removeClass('day-of-mounth-today');
-  }    
-  for(j =parseInt(moment(picker_pickedyear+"-"+picker_pickedmonth+"-01",'YYYY-M-D').format('D')) ,  i = picker_startdayofmonth ; i <= picker_dayofmonth+picker_startdayofmonth-1 ; i++ , j++){
+  } 
+    for(j =parseInt(moment(picker_pickedyear+"-"+picker_pickedmonth+"-01",'YYYY-M-D').format('D')) ,  i = picker_startdayofmonth ; i <= picker_dayofmonth+picker_startdayofmonth-1 ; i++ , j++){
     $(".day-of-mounth").eq(i).text(j);
     $(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.1)"});
     if(j == parseInt(moment().format('D')) && parseInt(moment().format('M')) == picker_pickedmonth && parseInt(moment().format('YYYY')) == picker_pickedyear){
       $(".day-of-mounth").eq(i).addClass('day-of-mounth-today');
     }
   }
+  }, 350);
+  setTimeout(function() {
+    $('.day-of-mounth').removeClass('opacity-none');
+  }, 500);
+
+    
 }
 function onclickfunc(date){
 
@@ -54,7 +63,9 @@ $('.day-of-mounth').click(function(){
   $('.piker-pickeddate').text(date.format('D'));
   $('.piker-pickedday').text(date.format('dddd'));
   $('.datepickerinput').val(date.format('YYYY/M/D'));
-  $('.datepicker').addClass('datepicker-clapse');
+  setTimeout(function(){
+    $('.datepicker').addClass('datepicker-clapse');
+  },500);
 })
 
 // $('.datepickerinput').clickOutsideThisElement(function(){
@@ -76,7 +87,7 @@ function apendmonth(){
   $('.block-main').append(month);
 }
 function  basepicker(){
-  var bacepiker = '<div class="datepicker datepicker-clapse"><div class="block-side"><div class="piker-pickedyear"></div><div class="piker-pickedday"></div><div class="piker-pickeddate inline-block"></div><div class="piker-pickedmonth inline-block"></div><div class="picker_nowdate"></div></div><div class="block-main"></div></div>'
+  var bacepiker = '<div class="datepicker datepicker-clapse animation-g"><div class="block-side"><div class="piker-pickedyear"></div><div class="piker-pickedday"></div><div class="piker-pickeddate inline-block"></div><div class="piker-pickedmonth inline-block"></div><div class="picker_nowdate"></div></div><div class="block-main"></div></div>'
   $(bacepiker).insertAfter('.datepickerinput');
 }
 jQuery(document).ready(function () {
