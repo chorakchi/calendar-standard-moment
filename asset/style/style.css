@@ -34,7 +34,7 @@
 body{
     background: #333;
     color: #fff;
-    font-family: 'isw';
+    font-family: 'isw-l';
 }
 *, *::after, *::before {
     
@@ -49,6 +49,11 @@ body{
     position: absolute;
     border: 1px solid rgba(255,255,255,0.5);
     background: rgba(56,68,82,1);
+overflow: hidden;
+}
+.datepicker-clapse{
+    border: none;
+    height: 0px;
 }
 .block-side{
     position: relative;
@@ -121,6 +126,7 @@ body{
     color: rgba(255,255,255,0.3);
     padding: 10px;
     border-top: 5px solid rgba(255,255,255,0.1);
+    margin-top: 15px;
 
 }
 .picker-header{
@@ -145,5 +151,13 @@ body{
     font-size: 25px;
 }
 .picker-btnmonth:hover{
+    background: rgba(0,0,0,0.1);
+}
+.picker-btnpicker{
+    margin-bottom: 6px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+.picker-btnpicker:hover{
     background: rgba(0,0,0,0.1);
 }

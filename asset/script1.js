@@ -18,7 +18,7 @@ function pikersettime(date){
   var picker_pickedyear =  parseInt(date.format('jYYYY'));
   var picker_date_temp = moment(picker_pickedyear+"-"+picker_pickedmonth+"-01",'jYYY-jM-jD');
   var picker_startdayofmonth =  parseInt (picker_date_temp.format('d'));
-  var picker_dayofmonth = parseInt(date.daysInMonth());
+  var picker_dayofmonth = parseInt(date.jDaysInMonth());
   
   $(".piker-pickedyear").text(date.format('jYYYY'));
   $(".piker-pickedday").text(date.format('dddd'));
