@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'isw';
+  src:url('../fonts/IRANSansWeb.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-b';
+  src:url('../fonts/IRANSansWeb_Bold.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-l';
+  src:url('../fonts/IRANSansWeb_Light.woff'),
+  url('../fonts/IRANSansWeb_Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-m';
+  src:url('../fonts/IRANSansWeb_Medium.woff'),
+  url('../fonts/IRANSansWeb_Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-u';
+  src:url('../fonts/IRANSansWeb_UltraLight.woff'),
+  url('../fonts/IRANSansWeb_UltraLight.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    background: #333;
+    color: #fff;
+    font-family: 'isw-l';
+}
+*, *::after, *::before {
+    
+  box-sizing: border-box;
+  font-size: 15px;
+}
+ span, button, a, .btn, .animation-g, .animation-g * , .animation-p {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.test{
+    font-size: 20px;
+    color: darksalmon;
+}
+.datepicker{
+    position: absolute;
+    background: rgba(56,68,82,1);
+    overflow: hidden;
+    height: 360px;
+}
+.datepicker-clapse{
+    height: 0px;
+}
+.block-side{
+    position: relative;
+    float: left;
+    height: 100%;
+    display: inline-block;
+    /*background: rgba(255,255,255,0.1);*/
+    padding:10px;
+}
+.block-main{
+    position: relative;
+    display: inline-block;
+    background: rgba(255,255,255,0.1)
+}
+.piker-row{
+    position: relative;
+}
+.mounth{
+    position: relative;
+    padding: 4%;
+    margin: 10px;
+    background: rgba(0,0,0,0.1)
+}
+.name-of-week{
+    width: 13%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: rgba(255,255,255,0.4);
+    overflow:hidden;
+    min-width: 40px;
+    font-size: 10px;
+}
+.day-of-mounth{
+    width: 13%;
+    min-width: 40px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.0);
+    border-radius: 2px;
+    cursor: pointer;
+    color: rgb(255,255,255);
+    margin: 1px;
+    line-height: 40px;
+    opacity: 1;
+}
+.day-of-mounth:hover{
+    background: rgba(0,0,0,0.1)
+}
+.day-of-mounth-today{
+    background: rgba(255,255,255,0.1);
+}
+.sperat-week{
+    width: 100%;
+}
+.piker-pickedyear{
+    font-size: 20px;
+}
+.piker-pickedday{
+    font-size: 30px;
+}
+.piker-pickeddate{
+    font-size: 20px;
+}
+.piker-pickedmonth{
+    font-size: 20px;
+}
+.picker_nowdate{
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-top: 2px solid rgba(255,255,255,0.1);
+    margin-top: 15px;
+
+}
+.picker-header{
+    position: relative;
+    width: 100%;
+}
+.inline-block{
+    display: inline-block;
+}
+.color-gray1{
+    color: rgba(255,255,255,0.7);
+}
+.picker-btnmonth{
+    padding: 0px 13px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    float: right;
+}
+.picker-btnmonth::before{
+    font-size: 25px;
+}
+.picker-btnmonth:hover{
+    background: rgba(0,0,0,0.1);
+}
+.picker-btnpicker{
+    margin-bottom: 6px;
+    padding: 0px 6px;
+    cursor: pointer;
+}
+.picker-btnpicker:hover{
+    background: rgba(0,0,0,0.1);
+}
+.opacity-none{
+    opacity: 0;
+}
+

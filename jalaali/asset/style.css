@@ -1,0 +1,78 @@
+/*@font-face {
+  font-family: 'isw';
+  src:url('../fonts/IRANSansWeb.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-b';
+  src:url('../fonts/IRANSansWeb_Bold.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-l';
+  src:url('../fonts/IRANSansWeb_Light.woff'),
+  url('../fonts/IRANSansWeb_Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-m';
+  src:url('../fonts/IRANSansWeb_Medium.woff'),
+  url('../fonts/IRANSansWeb_Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'isw-u';
+  src:url('../fonts/IRANSansWeb_UltraLight.woff'),
+  url('../fonts/IRANSansWeb_UltraLight.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    background: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    font-family: 'isw'
+  box-sizing: border-box;
+}
+.test{
+    font-size: 20px;
+    color: darksalmon;
+}
+.block-side{
+    display: inline;
+    background: cadetblue;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+
+}
+.mounth{
+    display: inline;
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid palevioletred;
+    background: rgba(255,255,255,0.1)
+}
+.day-of-mounth{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.0);
+    border-radius: 2px;
+    padding: 5px;
+    margin:  1px;
+    color: palegoldenrod;
+    overflow:hidden;
+}
+.sperat-week{
+    width: 100px;
+}*/
