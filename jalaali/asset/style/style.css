@@ -34,7 +34,7 @@
 body{
     background: #333;
     color: #fff;
-    font-family: 'isw-l';
+    font-family: 'isw-b';
 }
 *, *::after, *::before {
     
@@ -55,7 +55,6 @@ body{
     position: absolute;
     background: rgba(56,68,82,1);
     overflow: hidden;
-    height: 360px;
 }
 .datepicker-clapse{
     height: 0px;

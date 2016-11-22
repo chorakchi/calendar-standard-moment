@@ -671,9 +671,9 @@
   ************************************/
 
   jMoment.jDaysInMonth = function (year, month) {
-    if (month < 6) {
+    if (month <= 6) {
       return 31
-    } else if (month < 11) {
+    } else if (month <= 11) {
       return 30
     } else if (jMoment.jIsLeapYear(year)) {
       return 30
