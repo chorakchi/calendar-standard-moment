@@ -6,33 +6,33 @@ function jalaalipikersettime(date,selected){
   var picker_startdayofmonth =  parseInt (picker_date_temp.format('d'))+1;
   var picker_dayofmonth = parseInt(moment.jDaysInMonth(date.format('jYYYY'),date.format('jM')));
   
-  selected.find(".piker-pickedyear").text(date.format('jYYYY'));
-  selected.find(".piker-pickedday").text(date.format('dddd'));
-  selected.find(".piker-pickeddate").text(date.format('jD'));
-  selected.find(".piker-pickedmonth").text(date.format('jMMMM'));
-  selected.find(".picker_nowdate").text(moment().format('jYYYY/jM/jD'+' : امـروز'));
+  selected.next().find(".piker-pickedyear").text(date.format('jYYYY'));
+  selected.next().find(".piker-pickedday").text(date.format('dddd'));
+  selected.next().find(".piker-pickeddate").text(date.format('jD'));
+  selected.next().find(".piker-pickedmonth").text(date.format('jMMMM'));
+  selected.next().find(".picker_nowdate").text(moment().format('jYYYY/jM/jD'+' : امـروز'));
   
-  selected.find('.day-of-mounth').addClass('opacity-none');
+  selected.next().find('.day-of-mounth').addClass('opacity-none');
   
   setTimeout(function() {
     for(  i = 0 ; i <= 41 ; i++ ){
-    selected.find(".day-of-mounth").eq(i).text("");
-    selected.find(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.0)"});
-    selected.find(".day-of-mounth").eq(i).removeClass('day-of-mounth-today');
+    selected.next().find(".day-of-mounth").eq(i).text("");
+    selected.next().find(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.0)"});
+    selected.next().find(".day-of-mounth").eq(i).removeClass('day-of-mounth-today');
   } 
     for(j =parseInt(moment(picker_pickedyear+"-"+picker_pickedmonth+"-01",'jYYYY-jM-jD').format('jD')) ,  i = picker_startdayofmonth ; i <= picker_dayofmonth+picker_startdayofmonth-1 ; i++ , j++){
-    selected.find(".day-of-mounth").eq(i).text(j);
-    selected.find(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.1)"});
+    selected.next().find(".day-of-mounth").eq(i).text(j);
+    selected.next().find(".day-of-mounth").eq(i).css({"border": "1px solid rgba(255,255,255,0.1)"});
     if(j == parseInt(moment().format('jD')) && parseInt(moment().format('M')) == picker_pickedmonth && parseInt(moment().format('jYYYY')) == picker_pickedyear){
       $(".day-of-mounth").eq(i).addClass('day-of-mounth-today');
     }
   }
   }, 350);
   setTimeout(function() {
-    selected.find('.day-of-mounth').removeClass('opacity-none');
+    selected.next().find('.day-of-mounth').removeClass('opacity-none');
   }, 500);  
 }
-function onclickfunc(date){
+function jalaalionclickfunc(date){
 
   $('.datepickerinput').focus(function(){
 
@@ -45,14 +45,14 @@ function onclickfunc(date){
 })
 
 $('.picker-nextmonth').click(function(){
-  var i = parseInt($(this).parents('.datepicker').index('.datepicker'));
+  var i = parseInt($(this).parents('.datepickerinput[typecalendar="jalaali"]').index('.datepickerinput[typecalendar="jalaali"]'));
 
-pikersettime(date.add(1, 'jMonth'),$('.datepicker').eq(i));
+jalaalipikersettime(date.add(1, 'jMonth'),$('.datepickerinput[typecalendar="jalaali"]').eq(i));
 })
 
 $('.picker-prevmonth').click(function(){
   var i = parseInt($(this).parents('.datepicker').index('.datepicker'));
-pikersettime(date.subtract(1, 'month'),$('.datepicker').eq(i));
+jalaalipikersettime(date.subtract(1, 'month'),$('.datepickerinput[typecalendar="jalaali"]').eq(i));
 })
 
 $('.day-of-mounth').click(function(){
@@ -94,12 +94,16 @@ function jalaalidatepicker(){
   var date = moment();
   jalaalibasepicker();
   jalaaliapendmonth();
-  for(i = $('.datepicker').length; i >= 0; i--){
-    pikersettime(date,$('.datepicker').eq(i));
+  for(i = $('.datepickerinput').length; i >= 0; i--){
+    jalaalipikersettime(date,$('.datepickerinput[typecalendar="jalaali"]').eq(i));
   }
-  onclickfunc(date);
+  jalaalionclickfunc(date);
 }
 jQuery(document).ready(function () {
-  jalaalidatepicker();
+  if($('.datepickerinput[typecalendar]').attr('typecalendar') == "jalaali"){
+    jalaalidatepicker();
+  }else if($('.datepickerinput[typecalendar]').attr('typecalendar') == "jalaali"){
+    georgiandatepicker();
+  }
 });
 
